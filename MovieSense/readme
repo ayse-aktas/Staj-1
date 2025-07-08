@@ -1,0 +1,46 @@
+🧠 Proje Planlaması (Film Öneri Sistemi – Yapay Zeka Destekli)
+1. Proje Tanımı:
+Kullanıcının izleme geçmişine, beğeni puanlarına ve tercihlerine göre ona özel film önerileri sunan bir yapay zeka sistemi geliştirilecektir. Sistem hem içerik temelli (content-based) hem de işbirlikçi filtreleme (collaborative filtering) yöntemlerini kullanabilir.
+
+2. Teknolojiler:
+Backend: Python, FastAPI veya Flask
+
+AI & ML: scikit-learn, pandas, NumPy, TensorFlow/Keras (isteğe bağlı)
+
+Veritabanı: SQLite, PostgreSQL
+
+Frontend (tercihe göre): React / Next.js veya mobil için Flutter
+
+Veri Kaynağı: MovieLens Dataset, IMDB API
+
+3. Modül Planlaması:
+📌 1. Veri Toplama ve Hazırlama:
+MovieLens verilerini indir.
+
+Filmler, kullanıcılar, değerlendirmeler (ratings) ve türleri ayır.
+
+Eksik verileri temizle, uygun formata dönüştür.
+
+📌 2. Öneri Motoru Geliştirme:
+İçerik Temelli Öneri: Filmlerin türü, yönetmen, oyuncular vb. bilgilerine göre benzerlik (cosine similarity) hesabı.
+
+İşbirlikçi Filtreleme: Kullanıcı puanlarına göre benzer kullanıcıların tercihlerini önerme.
+
+Hybrid Sistem: Her iki yöntemi birleştirme (ileri seviye).
+
+📌 3. Kullanıcı Girişi ve Test:
+Kullanıcıdan film puanlaması veya tercihleri alın.
+
+Test kullanıcılarıyla sistemin önerilerini kıyasla.
+
+📌 4. Arayüz Geliştirme:
+Kullanıcıların beğendikleri filmleri seçebileceği veya puanlayabileceği bir arayüz.
+
+Sistem önerilerini görselleştiren sayfa (örneğin posterlerle birlikte listeleme).
+
+📌 5. Ekstra Özellikler:
+IMDB puanlarını da hesaba katma.
+
+Tavsiye nedenini açıklama (explainable AI).
+
+Kullanıcı oturum sistemi ve geçmiş takibi.

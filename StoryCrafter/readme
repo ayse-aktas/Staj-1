@@ -1,0 +1,61 @@
+Proje Yapısı ve Bileşenleri
+1. Girdi Alma Modülü
+Kullanıcıdan konu, tema veya anahtar kelimeler alınır.
+
+Girdi doğal dil olarak serbest yazı veya kısa tanımlama olabilir.
+
+2. Metin Üretim Modülü
+Kullanılan Teknolojiler: GPT-4 benzeri gelişmiş dil modeli (OpenAI API, HuggingFace Transformers vb.)
+
+Görev: Girilen konuya uygun hikaye metni oluşturur.
+
+Özellikler:
+
+Hikayeyi paragraflara bölme
+
+Karakter, ortam ve olay tanımlamaları üretme
+
+Ton ve tür (dram, macera, bilimkurgu vb.) seçme opsiyonu
+
+3. Görsel Üretim Modülü
+Kullanılan Teknolojiler: DALL·E, Stable Diffusion, Midjourney API vb.
+
+Görev: Metinde geçen önemli sahneler veya anahtar kelimeler doğrultusunda ilgili görselleri üretme
+
+Özellikler:
+
+Hikaye bağlamına uygun renk, stil ve kompozisyon
+
+İstenirse çizgi roman, gerçekçi veya soyut tarzda görsel üretimi
+
+4. Hikaye Düzenleme ve Entegrasyon Modülü
+Metin ve görseller uygun şekilde hizalanır ve birleştirilir.
+
+Kullanıcıya sayfa/sahne bazlı hikaye formatında gösterim.
+
+İsteğe bağlı: Seslendirme veya animasyon entegrasyonu.
+
+5. Kullanıcı Arayüzü
+Web veya mobil tabanlı arayüz
+
+Kolay konu girişi, hikaye görüntüleme
+
+Hikayeyi dışa aktarma (PDF, e-kitap, slayt gösterisi vb.)
+
+Özelleştirme seçenekleri (hikaye uzunluğu, görsel stili, dil vb.)
+
+6. Model Eğitimi ve İyileştirme (Opsiyonel)
+Kendi hikaye veri setinizle veya açık kaynak hikaye + görsel veri setleri ile ince ayar.
+
+Kullanıcı geri bildirimlerine göre model iyileştirme.
+
+Özet Proje Akışı
+Kullanıcıdan bir konu/aletsel anahtar kelime alınır.
+
+Dil modeli konuya göre hikaye metnini üretir.
+
+Görsel üretim modeli, metinde geçen anahtar kelimelere göre ilgili görselleri oluşturur.
+
+Metin ve görseller düzenlenerek entegre bir hikaye formatında kullanıcıya sunulur.
+
+Kullanıcı isterse hikayeyi kaydedip paylaşabilir.
