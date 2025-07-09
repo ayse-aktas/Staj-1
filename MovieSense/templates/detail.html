@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }} - Detaylar</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <button id="darkModeToggle" style="float:right; margin-bottom:10px;">🌙 Karanlık Mod</button>
+    <a href="/" style="display:block; margin-bottom:20px;">⬅️ Ana Sayfa</a>
+
+    <div class="movie-detail">
+        <div class="movie-poster">
+            {% if poster %}
+                <img src="{{ poster }}" alt="{{ title }}">
+            {% else %}
+                <div class="no-poster">Poster Yok</div>
+            {% endif %}
+        </div>
+        <div class="movie-info">
+            <h2>{{ title }}</h2>
+            <p><strong>Yayın Tarihi:</strong> {{ release_date }}</p>
+            <p><strong>Ortalama Oy:</strong> {{ vote_average }}</p>
+            <p><strong>Açıklama:</strong> {{ overview }}</p>
+        </div>
+    </div>
+
+    <h3>🎥 Benzer Filmler</h3>
+    <div class="film-container">
+        {% for movie in similar_movies %}
+            <div class="film">
+                <a href="{{ url_for('movie_detail', title=movie.title) }}">
+                    {% if movie.poster %}
+                        <img src="{{ movie.poster }}" alt="{{ movie.title }}">
+                    {% else %}
+                        <div class="no-poster">Poster Yok</div>
+                    {% endif %}
+                    <p>{{ movie.title }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+    const isDark = localStorage.getItem("darkMode") === "true";
+
+    if (isDark) document.body.classList.add("dark");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const isDarkNow = document.body.classList.contains("dark");
+        localStorage.setItem("darkMode", isDarkNow);
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Film Öneri Sistemi</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js" defer></script>
+</head>
+<body>
+    <button id="darkModeToggle" style="float:right; margin-bottom:10px;">🌙 Karanlık Mod</button>
+    <h1>🎬 Film Öneri Sistemi</h1>
+
+    <form action="/search" method="get" autocomplete="off">
+        <input type="text" id="searchBox" name="q" placeholder="Film Ara..." onkeyup="autocompleteSearch()" />
+        <div id="suggestions" class="autocomplete-box"></div>
+    </form>
+
+    <form method="get">
+        <select name="genre" onchange="this.form.submit()">
+            <option value="">Tüm Türler</option>
+            {% for genre in genres %}
+                <option value="{{ genre }}" {% if genre == selected_genre %}selected{% endif %}>{{ genre }}</option>
+            {% endfor %}
+        </select>
+    </form>
+
+    <div class="film-container">
+        {% for film in filmler %}
+            <div class="film">
+                <a href="{{ url_for('movie_detail', title=film.title) }}">
+                    {% if film.poster %}
+                        <img src="{{ film.poster }}" alt="{{ film.title }}">
+                    {% else %}
+                        <div class="no-poster">Poster Yok</div>
+                    {% endif %}
+                    <p>{{ film.title }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+    <script>
+    const toggleBtn = document.getElementById("darkModeToggle");
+    const isDark = localStorage.getItem("darkMode") === "true";
+
+    if (isDark) document.body.classList.add("dark");
+
+    toggleBtn.addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        const isDarkNow = document.body.classList.contains("dark");
+        localStorage.setItem("darkMode", isDarkNow);
+    });
+</script>
+</body>
+</html>
