@@ -5,6 +5,7 @@ Bu proje, görüntü ve kamera akışındaki insan yüzlerinin duygularını tan
 ## Proje Yapısı
 Proje aşağıdaki dosya ve klasörlerden oluşmaktadır:
 
+```
 HAPPYSAD/
 ├── fer2013_dataset/
 │   ├── test/
@@ -14,6 +15,7 @@ HAPPYSAD/
 ├── model.pth
 ├── readme.md
 └── train.py
+```
 
   - **`fer2013_dataset/`**: FER2013 duygu tanıma veri setini içerir.
       - `fer2013.csv`: Veri setinin ana CSV dosyası.
@@ -36,8 +38,23 @@ Projeyi çalıştırmadan önce gerekli kütüphaneleri kurmanız gerekmektedir.
     *Not: Eğer bir grafik arayüzü ile çalışıyorsanız `opencv-python` yerine `opencv-python-headless` kullanabilirsiniz. Genel kullanım için `opencv-python` da uygun olabilir.*
 
 2.  **Veri Setini İndirin:**
+Bu projede kullanılan FER2013 veri seti boyutu nedeniyle GitHub’a yüklenmemiştir. fer2013.csv dosyasını aşağıdaki bağlantıdan indirmeniz ve proje dizininde fer2013_dataset/ klasörü içine yerleştirmeniz gerekmektedir:
 
-    FER2013 veri setini indirmeniz ve `fer2013_dataset` klasörü içine yerleştirmeniz gerekmektedir. `fer2013.csv` dosyasının bu klasörün içinde olması önemlidir. Veri setini Kaggle gibi platformlardan bulabilirsiniz.
+📁 İndirme Bağlantısı (Kaggle):
+Kaggle - FER2013 veri seti
+
+Not: Kaggle üzerinden veri setini indirebilmek için bir Kaggle hesabınızın olması ve giriş yapmış olmanız gerekmektedir.
+
+Dosyayı Nereye Koymalıyım?
+İndirdiğiniz fer2013.csv dosyasını aşağıdaki yapıya uygun şekilde yerleştirin:
+
+Kopyala
+Düzenle
+HAPPYSAD/
+└── fer2013_dataset/
+    └── fer2013.csv
+Bu konum, train.py betiği tarafından otomatik olarak kullanılacaktır.
+
 
 ## Kullanım
 
