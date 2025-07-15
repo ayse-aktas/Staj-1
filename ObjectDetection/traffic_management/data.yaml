@@ -1,0 +1,6 @@
+train: ../traffic_management/train/images
+val: ../traffic_management/valid/images
+test: ../traffic_management/test/images
+
+nc: 8
+names: ['accident', 'autorickshaw', 'bicycle', 'bus', 'car', 'emergency', 'motorcycle', 'truck']
